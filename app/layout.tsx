@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { PORTFOLIO } from "@/constants/portfolio";
 
 export const metadata: Metadata = {
-  title: "Ahfas - Mobile & Web Developer",
-  description: "Mobile & Web Developer with 4+ years experience. Specializing in Flutter, Swift, & Laravel for building professional mobile & web applications.",
+  title: `${PORTFOLIO.name} - ${PORTFOLIO.title}`,
+  description: PORTFOLIO.description,
 };
 
 export default function RootLayout({

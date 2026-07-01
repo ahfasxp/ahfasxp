@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ahfas - Mobile & Web Developer | Flutter & Laravel",
-  description: "Full Stack Developer specializing in Flutter mobile development. 4+ years experience building professional mobile and web applications.",
+  title: "Ahfas - Mobile & Web Developer",
+  description: "Mobile & Web Developer with 4+ years experience. Specializing in Flutter, Swift, & Laravel for building professional mobile & web applications.",
 };
 
 export default function RootLayout({

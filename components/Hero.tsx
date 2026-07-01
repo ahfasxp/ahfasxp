@@ -10,7 +10,7 @@ export default function Hero() {
           👋 Hello, I'm Ahfas
         </h1>
         <h2 className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8">
-          Mobile and Web Developer specializing in Flutter, Swift & Laravel
+          Mobile & Web Developer specializing in Flutter, Swift & Laravel
         </h2>
         <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
           Full Stack Developer with 4+ years of experience building professional mobile and web applications. 

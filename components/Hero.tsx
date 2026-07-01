@@ -14,7 +14,7 @@ export default function Hero() {
           {PORTFOLIO.subtitle}
         </h2>
         <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-          {PORTFOLIO.fullDescription}
+          {PORTFOLIO.description}
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4">

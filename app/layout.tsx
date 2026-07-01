@@ -3,7 +3,7 @@ import "./globals.css";
 import { PORTFOLIO } from "@/constants/portfolio";
 
 export const metadata: Metadata = {
-  title: `${PORTFOLIO.name} - ${PORTFOLIO.title}`,
+  title: `${PORTFOLIO.name} - Mobile & Web Developer`,
   description: PORTFOLIO.description,
 };
 

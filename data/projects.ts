@@ -9,7 +9,7 @@ export const projects: Project[] = [
   {
     title: "Invitable",
     tech: "Next.js, TypeScript, Supabase, Tailwind",
-    image: "https://image.thum.io/get/width/1200/crop/800/https://invitable.vercel.app",
+    image: "/invitable-preview.gif",
     type: "website",
   },
   {

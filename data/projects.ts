@@ -7,6 +7,12 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Invitable",
+    tech: "Next.js, TypeScript, Supabase, Tailwind",
+    image: "https://firebasestorage.googleapis.com/v0/b/promopreview/o/thumbnails%2F3891eee6-5181-4ecb-8e48-3179cee8cee3.png?alt=media&token=e073d30e-b147-459b-b801-0c6b4940abe7",
+    type: "website",
+  },
+  {
     title: "AlertCam Mobile",
     tech: "Flutter, Stacked",
     image: "https://firebasestorage.googleapis.com/v0/b/promopreview/o/thumbnails%2F193d3ef4-3e6c-42ca-95e3-24e457bff4f2.png?alt=media&token=7bd3eff2-f900-4afa-9ca9-2b3f9e804781",
@@ -131,11 +137,5 @@ export const projects: Project[] = [
     tech: "Flutter, Provider",
     image: "https://firebasestorage.googleapis.com/v0/b/promopreview/o/thumbnails%2Ffa0dfe8a-99ec-4421-8f63-14e5f2051ea1.png?alt=media&token=65117ad8-5405-422a-8bc2-60b829d191ae",
     type: "mobile",
-  },
-  {
-    title: "Invitable",
-    tech: "Next.js, TypeScript, Supabase, Tailwind",
-    image: "https://firebasestorage.googleapis.com/v0/b/promopreview/o/thumbnails%2F3891eee6-5181-4ecb-8e48-3179cee8cee3.png?alt=media&token=e073d30e-b147-459b-b801-0c6b4940abe7",
-    type: "website",
   },
 ];

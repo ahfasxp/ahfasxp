@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { FaHome } from 'react-icons/fa';
 
 const amounts = [
   20, 50, 80, 400, 150, 200, 500,
@@ -61,7 +62,8 @@ export default function SavingChallenge() {
           href="/"
           className="inline-flex items-center gap-2 text-blue-700 hover:text-blue-900 font-semibold mb-6 transition-colors"
         >
-          ← Kembali ke Home
+          <FaHome />
+          <span>Home</span>
         </Link>
         
         <div className="text-center mb-8">

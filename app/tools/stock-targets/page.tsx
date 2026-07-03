@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { FaHome } from 'react-icons/fa';
 
 interface StockResult {
   timestamp: string;
@@ -288,7 +289,8 @@ Formula: adimollogy & buruhIHSG | Dev: Ahfas`;
           href="/"
           className="inline-flex items-center gap-2 text-blue-700 hover:text-blue-900 font-semibold mb-6 transition-colors"
         >
-          ← Kembali ke Home
+          <FaHome />
+          <span>Home</span>
         </Link>
         
         <div className="text-center mb-6">

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { FaHome } from 'react-icons/fa';
 
 interface TradingPlan {
   id: number;
@@ -306,7 +307,8 @@ export default function TradingPlan() {
           href="/"
           className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 font-semibold mb-6 transition-colors"
         >
-          ← Kembali ke Home
+          <FaHome />
+          <span>Home</span>
         </Link>
         
         <div className="text-center mb-16">

@@ -181,61 +181,61 @@ export default function TradingPlan() {
     }
 
     return (
-      <div key={plan.id} className="bg-gray-800 rounded-lg p-5 mb-4 border border-gray-700 hover:border-blue-500 transition-all">
+      <div key={plan.id} className="bg-white rounded-lg p-5 mb-4 border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all">
         <div className="flex justify-between items-center mb-4">
-          <div className="text-gray-400 text-sm font-mono">
+          <div className="text-gray-600 text-sm font-mono">
             📅 {plan.date}
-            {hitMessage && <span className="text-green-400 ml-3 font-semibold">{hitMessage}</span>}
+            {hitMessage && <span className="text-green-600 ml-3 font-semibold">{hitMessage}</span>}
           </div>
           <div className="flex gap-2">
             {!isArchived && (
               <button
                 onClick={() => hitPlan(plan.id, 'manual')}
-                className="px-3 py-1 bg-gray-700 hover:bg-gray-600 text-white text-xs rounded transition-colors"
+                className="px-3 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs rounded transition-colors"
               >
                 Archive
               </button>
             )}
             <button
               onClick={() => deletePlan(plan.id)}
-              className="px-3 py-1 bg-red-900 hover:bg-red-800 text-white text-xs rounded transition-colors"
+              className="px-3 py-1 bg-red-600 hover:bg-red-700 text-white text-xs rounded transition-colors"
             >
               Delete
             </button>
           </div>
         </div>
 
-        <div className="bg-gray-900 rounded-lg p-5 border-l-4 border-green-400">
+        <div className="bg-gray-50 rounded-lg p-5 border border-gray-200">
           <div className="mb-5">
-            <h3 className="text-green-400 font-mono text-lg mb-3 flex items-center gap-2">
-              <span className="text-blue-400">▸</span>Entry Buy Zone
+            <h3 className="text-blue-600 font-mono text-lg mb-3 flex items-center gap-2">
+              <span className="text-gray-600">▸</span>Entry Buy Zone
             </h3>
-            <div className="text-white font-mono text-xl mb-1">
+            <div className="text-gray-900 font-mono text-xl mb-1">
               {formatCurrency(plan.entryMin)} - {formatCurrency(plan.entryMax)}
             </div>
-            <div className="text-gray-400 text-sm">
+            <div className="text-gray-600 text-sm">
               Harga Entry Ideal: {formatCurrency(avgEntry)}
             </div>
           </div>
 
           <div className="mb-5">
-            <h3 className="text-green-400 font-mono text-lg mb-3 flex items-center gap-2">
-              <span className="text-blue-400">▸</span>Take Profit Targets
+            <h3 className="text-blue-600 font-mono text-lg mb-3 flex items-center gap-2">
+              <span className="text-gray-600">▸</span>Take Profit Targets
             </h3>
             <div className="space-y-2">
               {tpList.map((tp, index) => {
                 const percentage = calculatePercentage(avgEntry, tp);
                 return (
-                  <div key={index} className="bg-gray-800 p-3 rounded border border-gray-700 flex justify-between items-center">
+                  <div key={index} className="bg-white p-3 rounded border border-gray-200 flex justify-between items-center">
                     <div className="flex items-center gap-3">
-                      <span className="text-green-400 text-xl">●</span>
-                      <span className="font-mono text-white">TP{index + 1}: {formatCurrency(tp)}</span>
-                      <span className="text-green-400 font-semibold text-sm">+{percentage}%</span>
+                      <span className="text-green-600 text-xl">●</span>
+                      <span className="font-mono text-gray-900">TP{index + 1}: {formatCurrency(tp)}</span>
+                      <span className="text-green-600 font-semibold text-sm">+{percentage}%</span>
                     </div>
                     {!isArchived && (
                       <button
                         onClick={() => hitPlan(plan.id, `tp${index + 1}`)}
-                        className="px-3 py-1 bg-green-900 hover:bg-green-800 text-white text-xs rounded transition-colors"
+                        className="px-3 py-1 bg-green-600 hover:bg-green-700 text-white text-xs rounded transition-colors"
                       >
                         Hit
                       </button>
@@ -245,7 +245,7 @@ export default function TradingPlan() {
               })}
             </div>
             {tpList.length > 1 && (
-              <div className="text-gray-400 text-sm mt-2">
+              <div className="text-gray-600 text-sm mt-2">
                 Average Take Profit: {formatCurrency(avgTP)} (+{calculatePercentage(avgEntry, avgTP)}%)
               </div>
             )}
@@ -253,15 +253,15 @@ export default function TradingPlan() {
 
           {plan.protection && stopLoss !== null && (
             <div className="mb-5">
-              <h3 className="text-green-400 font-mono text-lg mb-3 flex items-center gap-2">
-                <span className="text-blue-400">▸</span>Proteksi
+              <h3 className="text-blue-600 font-mono text-lg mb-3 flex items-center gap-2">
+                <span className="text-gray-600">▸</span>Proteksi
               </h3>
               <div className="flex justify-between items-center">
                 <div>
-                  <div className="text-red-400 font-mono text-xl mb-1">
+                  <div className="text-red-600 font-mono text-xl mb-1">
                     {formatCurrency(stopLoss)} <span className="text-sm">({calculatePercentage(avgEntry, stopLoss)}%)</span>
                   </div>
-                  <div className="text-gray-400 text-sm">
+                  <div className="text-gray-600 text-sm">
                     Risk/Reward Ratio: 1:{plan.protection} | Risk per unit: {formatCurrency(riskPerUnit)}
                   </div>
                   <div className="text-gray-500 text-xs mt-2 italic">
@@ -274,7 +274,7 @@ export default function TradingPlan() {
                 {!isArchived && (
                   <button
                     onClick={() => hitPlan(plan.id, 'sl')}
-                    className="px-3 py-1 bg-red-900 hover:bg-red-800 text-white text-xs rounded transition-colors"
+                    className="px-3 py-1 bg-red-600 hover:bg-red-700 text-white text-xs rounded transition-colors"
                   >
                     Hit
                   </button>
@@ -285,10 +285,10 @@ export default function TradingPlan() {
 
           {plan.notes && (
             <div>
-              <h3 className="text-green-400 font-mono text-lg mb-3 flex items-center gap-2">
-                <span className="text-blue-400">▸</span>Catatan
+              <h3 className="text-blue-600 font-mono text-lg mb-3 flex items-center gap-2">
+                <span className="text-gray-600">▸</span>Catatan
               </h3>
-              <div className="text-gray-400 text-sm whitespace-pre-wrap leading-relaxed">
+              <div className="text-gray-700 text-sm whitespace-pre-wrap leading-relaxed">
                 {plan.notes}
               </div>
             </div>
@@ -299,93 +299,91 @@ export default function TradingPlan() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white p-5" style={{
-      backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 255, 136, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(0, 212, 255, 0.05) 0%, transparent 50%)'
-    }}>
+    <div className="min-h-screen bg-gray-50 p-5">
       <div className="max-w-6xl mx-auto">
         <Link 
           href="/"
-          className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 font-semibold mb-6 transition-colors"
+          className="inline-flex items-center gap-2 text-blue-700 hover:text-blue-900 font-semibold mb-6 transition-colors"
         >
           <FaHome />
           <span>Home</span>
         </Link>
         
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold font-mono mb-3 bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold font-mono mb-3 text-gray-900">
             My Trading Plan
           </h1>
-          <p className="text-gray-400 text-lg">Rencana Trading yang Terstruktur</p>
+          <p className="text-gray-600 text-lg">Rencana Trading yang Terstruktur</p>
         </div>
 
         <div className="grid gap-8 mb-8">
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8">
-            <h2 className="text-xl font-mono font-semibold mb-6 flex items-center gap-3">
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+          <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-8">
+            <h2 className="text-xl font-mono font-semibold mb-6 flex items-center gap-3 text-gray-900">
+              <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
               Input Trading Plan
             </h2>
 
             <div className="grid md:grid-cols-2 gap-5 mb-5">
               <div>
-                <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2 font-medium">
+                <label className="block text-gray-700 text-xs uppercase tracking-wider mb-2 font-medium">
                   Entry Min
                 </label>
                 <input
                   type="number"
                   value={entryMin}
                   onChange={(e) => setEntryMin(e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white font-mono focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-400/30 transition-all"
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 font-mono focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 transition-all"
                   placeholder="0"
                 />
               </div>
               <div>
-                <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2 font-medium">
+                <label className="block text-gray-700 text-xs uppercase tracking-wider mb-2 font-medium">
                   Entry Max
                 </label>
                 <input
                   type="number"
                   value={entryMax}
                   onChange={(e) => setEntryMax(e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white font-mono focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-400/30 transition-all"
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 font-mono focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 transition-all"
                   placeholder="0"
                 />
               </div>
             </div>
 
             <div className="mb-5">
-              <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2 font-medium">
+              <label className="block text-gray-700 text-xs uppercase tracking-wider mb-2 font-medium">
                 Take Profit (pisahkan dengan koma untuk multiple TP)
               </label>
               <input
                 type="text"
                 value={takeProfit}
                 onChange={(e) => setTakeProfit(e.target.value)}
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white font-mono focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-400/30 transition-all"
+                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 font-mono focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 transition-all"
                 placeholder="100, 120, 150"
               />
             </div>
 
             <div className="mb-5">
-              <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2 font-medium">
+              <label className="block text-gray-700 text-xs uppercase tracking-wider mb-2 font-medium">
                 Proteksi (Risk/Reward Ratio, contoh: 2 untuk 1:2)
               </label>
               <input
                 type="number"
                 value={protection}
                 onChange={(e) => setProtection(e.target.value)}
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white font-mono focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-400/30 transition-all"
+                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 font-mono focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 transition-all"
                 placeholder="2"
               />
             </div>
 
             <div className="mb-8">
-              <label className="block text-gray-400 text-xs uppercase tracking-wider mb-2 font-medium">
+              <label className="block text-gray-700 text-xs uppercase tracking-wider mb-2 font-medium">
                 Catatan
               </label>
               <textarea
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white resize-y min-h-[100px] focus:outline-none focus:border-green-400 focus:ring-2 focus:ring-green-400/30 transition-all"
+                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 resize-y min-h-[100px] focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 transition-all"
                 placeholder="Analisa teknikal, fundamental, sentiment..."
               />
             </div>
@@ -393,13 +391,13 @@ export default function TradingPlan() {
             <div className="flex gap-4">
               <button
                 onClick={savePlanToHistory}
-                className="flex-1 px-6 py-4 bg-green-400 hover:bg-green-500 text-gray-950 font-mono font-bold rounded-lg uppercase tracking-wider transition-all hover:shadow-lg hover:shadow-green-400/30 hover:-translate-y-0.5"
+                className="flex-1 px-6 py-4 bg-blue-600 hover:bg-blue-700 text-white font-mono font-bold rounded-lg uppercase tracking-wider transition-all hover:shadow-lg hover:-translate-y-0.5"
               >
                 Save Plan
               </button>
               <button
                 onClick={resetForm}
-                className="px-6 py-4 bg-gray-800 hover:bg-gray-700 text-white border border-gray-700 hover:border-blue-400 hover:text-blue-400 font-mono font-semibold rounded-lg uppercase tracking-wider transition-all"
+                className="px-6 py-4 bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 hover:border-blue-500 hover:text-blue-600 font-mono font-semibold rounded-lg uppercase tracking-wider transition-all"
               >
                 Reset
               </button>
@@ -408,15 +406,15 @@ export default function TradingPlan() {
         </div>
 
         {history.length > 0 && (
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8">
+          <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-8">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-xl font-mono font-semibold flex items-center gap-3">
-                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+              <h2 className="text-xl font-mono font-semibold flex items-center gap-3 text-gray-900">
+                <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
                 History
               </h2>
               <button
                 onClick={deleteAll}
-                className="px-4 py-2 bg-red-900 hover:bg-red-800 text-white text-sm rounded-lg transition-colors"
+                className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-sm rounded-lg transition-colors"
               >
                 Hapus semua
               </button>
@@ -427,8 +425,8 @@ export default function TradingPlan() {
                 onClick={() => setActiveTab('active')}
                 className={`flex-1 px-4 py-2 rounded-lg font-mono font-semibold transition-all ${
                   activeTab === 'active'
-                    ? 'bg-green-400 text-gray-950'
-                    : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
                 Active ({activePlans.length})
@@ -437,8 +435,8 @@ export default function TradingPlan() {
                 onClick={() => setActiveTab('archive')}
                 className={`flex-1 px-4 py-2 rounded-lg font-mono font-semibold transition-all ${
                   activeTab === 'archive'
-                    ? 'bg-green-400 text-gray-950'
-                    : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
                 Archive ({archivedPlans.length})
@@ -467,14 +465,14 @@ export default function TradingPlan() {
           </div>
         )}
 
-        <footer className="mt-12 text-center text-sm text-gray-500">
+        <footer className="mt-12 text-center text-sm text-gray-600">
           <p>
-            Made with <span className="text-red-400">❤</span> by{' '}
+            Made with <span className="text-red-500">❤</span> by{' '}
             <a
               href="https://x.com/ahfasxp"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-gray-400 hover:text-green-400 transition-colors"
+              className="font-medium text-blue-600 hover:text-blue-700 transition-colors"
             >
               Ahfas
             </a>

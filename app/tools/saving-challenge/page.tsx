@@ -56,8 +56,8 @@ export default function SavingChallenge() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-500 to-purple-600 p-5">
-      <div className="max-w-4xl mx-auto bg-white rounded-3xl p-8 shadow-2xl">
+    <div className="min-h-screen bg-gray-50 p-5">
+      <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
         <Link 
           href="/"
           className="inline-flex items-center gap-2 text-blue-700 hover:text-blue-900 font-semibold mb-6 transition-colors"
@@ -111,9 +111,9 @@ export default function SavingChallenge() {
           ))}
         </div>
 
-        <div className="bg-yellow-400 rounded-2xl p-6 text-center mb-5">
+        <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 text-center mb-5">
           <div className="text-3xl font-bold text-gray-800">SAVED Rp30 juta</div>
-          <div className="text-2xl text-red-700 mt-2">
+          <div className="text-2xl text-blue-600 mt-2">
             Total Tersimpan: Rp{totalSaved.toLocaleString('id-ID')}
           </div>
         </div>
@@ -130,8 +130,8 @@ export default function SavingChallenge() {
         <div className="text-center text-gray-600 text-sm mt-5">(*) dalam ribuan</div>
       </div>
 
-      <div className="text-center text-white text-sm mt-5 p-4">
-        Made with ❤️ by <a href="https://x.com/ahfasxp" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-yellow-400 hover:underline transition-colors">Ahfas</a>
+      <div className="text-center text-gray-600 text-sm mt-5 p-4">
+        Made with ❤️ by <a href="https://x.com/ahfasxp" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-700 hover:underline transition-colors">Ahfas</a>
       </div>
     </div>
   );

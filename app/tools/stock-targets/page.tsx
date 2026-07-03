@@ -283,7 +283,7 @@ Formula: adimollogy & buruhIHSG | Dev: Ahfas`;
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4 md:p-8">
+    <div className="min-h-screen bg-gray-50 p-4 md:p-8">
       <div className="max-w-5xl mx-auto">
         <Link 
           href="/"
@@ -299,7 +299,7 @@ Formula: adimollogy & buruhIHSG | Dev: Ahfas`;
           </h1>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-6">
+        <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 md:p-8 mb-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -465,7 +465,7 @@ Formula: adimollogy & buruhIHSG | Dev: Ahfas`;
         </div>
 
         {history.length > 0 && (
-          <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8">
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 md:p-8">
             <div className="flex justify-between items-center mb-4 gap-3 flex-wrap">
               <h2 className="text-2xl font-bold text-gray-800">Hasil Perhitungan</h2>
               <button

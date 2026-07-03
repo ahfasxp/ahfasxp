@@ -60,7 +60,7 @@ export default function SavingChallenge() {
       <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
         <Link 
           href="/"
-          className="inline-flex items-center gap-2 text-blue-700 hover:text-blue-900 font-semibold mb-6 transition-colors"
+          className="inline-flex items-center gap-2 bg-white border border-gray-300 px-4 py-2 rounded-lg hover:border-blue-500 hover:bg-gray-50 text-gray-700 font-medium transition-all"
         >
           <FaHome />
           <span>Home</span>

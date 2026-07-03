@@ -303,7 +303,7 @@ export default function TradingPlan() {
       <div className="max-w-6xl mx-auto">
         <Link 
           href="/"
-          className="inline-flex items-center gap-2 text-blue-700 hover:text-blue-900 font-semibold mb-6 transition-colors"
+          className="inline-flex items-center gap-2 bg-white border border-gray-300 px-4 py-2 rounded-lg hover:border-blue-500 hover:bg-gray-50 text-gray-700 font-medium transition-all mb-6"
         >
           <FaHome />
           <span>Home</span>

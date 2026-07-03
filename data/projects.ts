@@ -9,7 +9,7 @@ export const projects: Project[] = [
   {
     title: "Invitable",
     tech: "Next.js, TypeScript, Supabase, Tailwind",
-    image: "https://firebasestorage.googleapis.com/v0/b/promopreview/o/thumbnails%2F3891eee6-5181-4ecb-8e48-3179cee8cee3.png?alt=media&token=e073d30e-b147-459b-b801-0c6b4940abe7",
+    image: "https://image.thum.io/get/width/1200/crop/800/https://invitable.vercel.app",
     type: "website",
   },
   {

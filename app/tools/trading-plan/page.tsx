@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 interface TradingPlan {
   id: number;
@@ -301,6 +302,13 @@ export default function TradingPlan() {
       backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(0, 255, 136, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(0, 212, 255, 0.05) 0%, transparent 50%)'
     }}>
       <div className="max-w-6xl mx-auto">
+        <Link 
+          href="/"
+          className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 font-semibold mb-6 transition-colors"
+        >
+          ← Kembali ke Home
+        </Link>
+        
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold font-mono mb-3 bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
             My Trading Plan

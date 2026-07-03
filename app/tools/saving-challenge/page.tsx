@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 const amounts = [
   20, 50, 80, 400, 150, 200, 500,
@@ -56,6 +57,13 @@ export default function SavingChallenge() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-500 to-purple-600 p-5">
       <div className="max-w-4xl mx-auto bg-white rounded-3xl p-8 shadow-2xl">
+        <Link 
+          href="/"
+          className="inline-flex items-center gap-2 text-blue-700 hover:text-blue-900 font-semibold mb-6 transition-colors"
+        >
+          ← Kembali ke Home
+        </Link>
+        
         <div className="text-center mb-8">
           <div className="text-2xl font-bold text-gray-800 mb-2">
             BIG ALPHA<sup className="text-cyan-500 text-lg">®</sup>
